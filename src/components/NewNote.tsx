@@ -2,9 +2,10 @@ import { EditorContent, useEditor } from "@tiptap/react";
 import "../styles/NewNote.css";
 import StarterKit from "@tiptap/starter-kit";
 import MenuBar from "./MenuBar";
-import { useLocalStorage } from "./useLocalStorage";
+import { Note, useLocalStorage } from "./useLocalStorage";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 
 function NewNote() {
   const editor = useEditor({
@@ -18,7 +19,7 @@ function NewNote() {
   });
 
   const inputRef = useRef<HTMLInputElement>(null);
-  const { setItem } = useLocalStorage("New Note");
+  const { setItem, getItem } = useLocalStorage("Notes");
 
   const navigate = useNavigate();
 
@@ -36,13 +37,17 @@ function NewNote() {
       <EditorContent className="editor-content" editor={editor} />
       <div className="action-buttons">
         <button
-          onClick={() =>
-            setItem({
+          onClick={() => {
+            const newNote: Note = {
+              id: uuidv4(),
               title: inputRef.current?.value || "New Note",
-              content: editor?.getHTML(),
+              content: editor?.getHTML() || "Empty Note",
               createdAt: new Date().toLocaleString(),
-            })
-          }
+            };
+            const currentNotes = getItem() || [];
+            setItem([...currentNotes, newNote]);
+            navigate("/");
+          }}
           className="create-btn"
         >
           Create
