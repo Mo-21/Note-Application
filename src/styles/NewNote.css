@@ -103,3 +103,14 @@
 .cancel-btn:hover {
   background-color: #ff4d4d;
 }
+
+.title-input {
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  border-bottom: 1px solid #c0c0c0;
+  margin-bottom: 10px;
+  padding: 5px 20px;
+  background-color: transparent;
+  color: #ffd700;
+}
