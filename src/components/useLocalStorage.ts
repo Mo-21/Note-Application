@@ -1,13 +1,13 @@
-interface NewNote {
+export interface Note {
+  id: string;
   title: string;
-  content: string | undefined;
+  content: string;
   createdAt: string;
 }
 
 export const useLocalStorage = (key: string) => {
-  const setItem = (value: NewNote) => {
+  const setItem = (value: Note[]) => {
     try {
-      console.log(key, value);
       window.localStorage.setItem(key, JSON.stringify(value));
     } catch (err) {
       console.log(err);
@@ -23,7 +23,7 @@ export const useLocalStorage = (key: string) => {
     }
   };
 
-  const removeItem = () => {
+  const removeItem = (key: string) => {
     try {
       window.localStorage.removeItem(key);
     } catch (err) {
