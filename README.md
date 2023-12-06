@@ -2,6 +2,8 @@
 
 This is a note-taking application built using React with TypeScript. The app includes a rich text editor powered by Tiptap, searching functionality to find notes quickly, and the ability to add tags to categorize notes, as well as editing and deleting notes.
 
+[Live Preview](https://super-brioche-bf4e0d.netlify.app/)
+
 ![note-main](./src/screenshots/note-main.png)
 ![note-editor](./src/screenshots/note-editor.png)
 
