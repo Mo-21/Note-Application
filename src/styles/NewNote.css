@@ -8,6 +8,7 @@
   flex-direction: column;
   flex-grow: 1;
   padding: 20px;
+  outline: none;
 }
 
 .editor-content {
@@ -112,5 +113,49 @@
   margin-bottom: 10px;
   padding: 5px 20px;
   background-color: transparent;
+  outline: none;
   color: #ffd700;
+}
+
+.tags-input {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  border-bottom: 1px solid #c0c0c0;
+  margin-bottom: 10px;
+  padding: 5px 20px;
+  background-color: transparent;
+  color: #ff4d4d;
+  outline: none;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: 10px;
+  font-size: 1.3rem;
+}
+
+.tag {
+  background-color: #ff4d4d;
+  color: white;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.tags-place {
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333333;
+}
+
+.tags-place:hover {
+  cursor: pointer;
+  background-color: #e5e5e5;
 }
