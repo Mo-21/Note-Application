@@ -49,6 +49,7 @@ export default function EditNote() {
               title: currentTitle || "New Note",
               content: editor?.getHTML() || "Empty Note",
               createdAt: noteToEdit.createdAt,
+              tag: noteToEdit.tag,
             };
             const currentNotes = getItem() || [];
             const index = currentNotes.findIndex(
